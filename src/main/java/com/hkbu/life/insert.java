@@ -32,13 +32,20 @@ public class insert {
         System.out.println("before sorting: "+ Arrays.toString(l));
 
         for (int i = 1; i < l.length; i++) {
-            int key = l[i];
-            int j = i-1;
-            while (j>=0 && l[j]>key){
-                l[j+1] = l[j];
-                j -= 1;
+            for (int j=0;j<i;j++){
+                if (l[j] > l[i]){
+                    int temp = l[i];
+                    l[i] = l[j];
+                    l[j] = temp;
+                }
             }
-            l[j+1] = key;
+//            int key = l[i];
+//            int j = i-1;
+//            while (j>=0 && l[j]>key){
+//                l[j+1] = l[j];
+//                j -= 1;
+//            }
+//            l[j+1] = key;
         }
         System.out.println("After sorting: "+Arrays.toString(l));
     }
